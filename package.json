@@ -1,5 +1,5 @@
 {
-  "name": "Boilerplate",
+  "name": "recipee",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "postinstall": "npx jetify"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^6.4.0",
     "axios": "^0.19.0",
     "prop-types": "^15.7.2",
     "react": "16.9.0",

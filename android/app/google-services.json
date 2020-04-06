@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "884593079701",
+    "firebase_url": "https://recipee-5f84d.firebaseio.com",
+    "project_id": "recipee-5f84d",
+    "storage_bucket": "recipee-5f84d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884593079701:android:9f9630f3f81817f7c2329c",
+        "android_client_info": {
+          "package_name": "com.recipee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884593079701-b0rrvgrc5q8llp1bj3plt4nem2klejpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5TMTRxJjdFufDkrdENRsZziGS2IEOT9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884593079701-b0rrvgrc5q8llp1bj3plt4nem2klejpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

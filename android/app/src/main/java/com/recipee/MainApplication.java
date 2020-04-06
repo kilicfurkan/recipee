@@ -1,4 +1,4 @@
-package com.boilerplate;
+package com.recipee;
 
 import android.app.Application;
 import android.content.Context;
