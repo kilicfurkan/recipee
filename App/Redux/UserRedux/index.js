@@ -12,15 +12,12 @@ const { Types, Creators } = createActions({
 /* ------------- Reducer ------------- */
 
 const INITIAL_STATE = Immutable({
-  data: {
-    name: 'deneme'
-  },
+  data: {},
   loading: false,
-  error: true
+  error: false
 });
 
 const registerInProgress = (state, {}) => state.merge({
-  data: {},
   loading: true,
   error: false
 });

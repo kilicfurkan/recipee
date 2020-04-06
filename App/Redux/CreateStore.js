@@ -35,13 +35,13 @@ export default (rootReducer, rootSaga) => {
   enhancers.push(applyMiddleware(...middleware))
 
   // Redux persist
-  const persistedReducer = persistReducer(persistConfig, rootReducer)
+  // const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-  const store = createStore(persistedReducer, compose(...enhancers))
-  const persistor = persistStore(store)
+  const store = createStore(rootReducer, compose(...enhancers))
+  // const persistor = persistStore(store)
 
   // Kick off the root saga
   sagaMiddleware.run(rootSaga)
 
-  return { store, persistor }
+  return { store, persistor: null }
 }

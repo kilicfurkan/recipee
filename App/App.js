@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/lib/integration/react'
+// import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Redux'
 import RootScreen from './Screens/RootScreen'
 
@@ -20,9 +20,9 @@ export default class App extends Component {
          * for example `loading={<SplashScreen />}`.
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
-        <PersistGate loading={null} persistor={persistor}>
+        {/* <PersistGate loading={null} persistor={persistor}> */}
           <RootScreen />
-        </PersistGate>
+        {/* </PersistGate> */}
       </Provider>
     )
   }
