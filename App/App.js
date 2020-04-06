@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
-import createStore from 'App/Stores'
-import RootScreen from './Containers/Root/RootScreen'
+import createStore from 'App/Redux'
+import RootScreen from './Screens/RootScreen'
 
 const { store, persistor } = createStore()
 
