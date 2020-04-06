@@ -4,7 +4,7 @@ import { takeLatest, all } from 'redux-saga/effects'
 import { UserTypes } from '../Redux/UserRedux'
 
 /* ------------- Sagas ------------- */
-import { register } from './UserSaga'
+import { register } from './UserSagas'
 
 export default function* root() {
   yield all([
