@@ -1,7 +1,13 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
+import PreLoginScreen from 'App/Screens/PreLoginScreen'
 import MainScreen from 'App/Screens/MainScreen'
 import SplashScreen from 'App/Screens/SplashScreen'
+
+import RecipeDetailScreen from 'App/Screens/RecipeDetailScreen'
+
+import RegisterScreen from 'App/Screens/Auth/RegisterScreen'
+import LoginScreen from 'App/Screens/Auth/LoginScreen'
 
 /**
  * The root screen contains the application's navigation.
@@ -15,7 +21,11 @@ const StackNavigator = createStackNavigator(
     SplashScreen: SplashScreen,
     // The main application screen is our "ExampleScreen". Feel free to replace it with your
     // own screen and remove the example.
+    PreLoginScreen: PreLoginScreen,
+    RegisterScreen: RegisterScreen,
+    LoginScreen: LoginScreen,
     MainScreen: MainScreen,
+    RecipeDetailScreen: RecipeDetailScreen,
   },
   {
     // By default the application will show the splash screen

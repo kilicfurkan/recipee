@@ -9,6 +9,7 @@ export default () => {
      * @see https://redux.js.org/api-reference/combinereducers
      */
     user: require('./UserRedux').reducer,
+    recipe: require('./RecipeRedux').reducer,
   })
 
   return configureStore(rootReducer, rootSaga)
