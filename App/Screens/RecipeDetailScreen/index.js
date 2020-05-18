@@ -1,11 +1,24 @@
 import React from 'react'
-import { SafeAreaView, Text, Image } from 'react-native'
+import { ScrollView, View, Text, Image, ImageBackground, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 
+import Ingredients from '../../Containers/Ingredients'
+import RecipeDetail from '../../Containers/RecipeDetail'
+
+import Button from '../../Components/UI/Button'
+
 import RecipeActions from '../../Redux/RecipeRedux'
+import styles from './styles'
 
 class RecipeDetailScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isShowingIngredients: false
+    }
+  }
+
   componentDidMount() {
     const { navigation } = this.props
 
@@ -14,17 +27,41 @@ class RecipeDetailScreen extends React.Component {
     if (recipeId) {
       this.props.getRecipeDetail(recipeId)
     }
-    console.log(recipeId, 'recipeId')
   }
 
   render() {
+    const { isShowingIngredients } = this.state
     const { navigate } = this.props.navigation
-    const { data } = this.props.recipe
-
+    const { recipeDetail, loading } = this.props.recipe
+    console.log(recipeDetail, 'recipeDetail')
     return (
-      <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Detail</Text>
-      </SafeAreaView>
+      <ScrollView style={{ flex: 1 }}>
+        {loading ?
+          <ActivityIndicator style={{ flex: 1 }} /> :
+          <>
+            <View>
+              <ImageBackground source={{ uri: recipeDetail.image }} style={styles.image}>
+                <View style={styles.imageContainer} />
+              </ImageBackground>
+              <Button.Large
+                title={'Show Ingredients'}
+                onPress={() => this.setState({ isShowingIngredients: !isShowingIngredients })}
+                style={styles.ingredientsButton}
+              />
+            </View>
+            {isShowingIngredients ?
+              <Ingredients ingredients={recipeDetail.extendedIngredients} /> :
+              null
+            }
+            <RecipeDetail
+              title={recipeDetail.title}
+              sourceName={recipeDetail.sourceName}
+              servings={recipeDetail.servings}
+              readyInMinutes={recipeDetail.readyInMinutes}
+            />
+          </>
+        }
+      </ScrollView>
     )
   }
 }
@@ -39,4 +76,4 @@ const mapDispatchToProps = {
   getRecipeDetail: RecipeActions.getRecipeDetailInProgress
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (withNavigation(RecipeDetailScreen))
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(RecipeDetailScreen))

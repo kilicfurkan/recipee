@@ -1,16 +1,23 @@
 import React from 'react'
 import { TouchableOpacity, View, Text, FlatList, Image } from 'react-native'
+
+import RecipeCard from 'App/Components/UI/RecipeCard'
+
 import styles from './styles'
 
 const Recipes = ({ data, title, navigation }) => {
-  const _renderItem = meal => {
+  const _renderItem = (meal, key) => {
+    console.log(meal, 'meal')
     return (
-      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('RecipeDetailScreen', { recipeId: meal.id })}>
-        <Image source={{ uri: meal.image }} style={styles.image} />
-        <View style={styles.cardTitleContainer}>
-          <Text style={styles.mealTitle} numberOfLines={2}>{meal.title}</Text>
-        </View>
-      </TouchableOpacity>
+      <RecipeCard
+        key={key}
+        recipeId={meal.id}
+        title={meal.title}
+        duration={'45'}
+        image={meal.image}
+        mealType={title}
+        navigation={navigation}
+      />
     )
   }
 

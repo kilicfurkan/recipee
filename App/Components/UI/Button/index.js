@@ -16,4 +16,19 @@ const Button = ({ title, onPress, loading, disabled, style }) => (
   </TouchableOpacity>
 )
 
+Button.Large = ({ title, onPress, loading, disabled, style }) => {
+  return (
+    <TouchableOpacity
+      style={[style, styles.largeButton]}
+      onPress={onPress}
+      disabled={loading || disabled}
+    >
+      {loading ?
+        <ActivityIndicator /> :
+        <Text style={styles.largeButtonTitle}>{title}</Text>
+      }
+    </TouchableOpacity>
+  )
+}
+
 export default Button

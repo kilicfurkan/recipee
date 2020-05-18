@@ -21,7 +21,6 @@ export const requestRecipes = (requestBody) => {
 }
 
 export const requestRecipeDetail = (requestBody, recipeId) => {
-  console.log(requestBody, recipeId, 'requestRecipeDetail')
   return backEndServices.get(`${Routes.recipesPath}/${recipeId}/information`, {
     params: requestBody
   });

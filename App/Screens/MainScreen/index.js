@@ -25,7 +25,8 @@ class MainScreen extends React.Component {
       <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         {loading ? 
           <ActivityIndicator style={{ flex: 1 }} /> :
-          <Recipes data={recipes} title="Main Course" navigation={navigation} />
+          // <Recipes data={recipes} title="Main Course" navigation={navigation} />
+          <Text>Deneme</Text>
         }
       </SafeAreaView>
     )
